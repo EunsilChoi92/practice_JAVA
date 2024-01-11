@@ -1,4 +1,4 @@
-package com.practice.valuable;
+package com.practice.variable;
 
 public class Summary {
     public static void main(String[] args) {
