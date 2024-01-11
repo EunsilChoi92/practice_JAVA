@@ -2,7 +2,7 @@ package com.practice.valuable;
 
 public class Valuable1 {
     public static void main(String[] args) {
-        //1. 변수
+        //1. 변수 --
         //변수란?
         //하나의 값을 담는 저장공간(메모리)
         //변수명: 메모리 주소에 붙여진 이름
