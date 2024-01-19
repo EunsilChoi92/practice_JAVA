@@ -36,7 +36,7 @@ public class Operator2 {
         int y = 1;
         int z = 1;
         int result4 = ++y + 10;
-        int result5 = y++ + 10;
+        int result5 = z++ + 10;
 
         int a = 10;
         int b = 10;
@@ -75,5 +75,93 @@ public class Operator2 {
 
         System.out.println("\n-----------------------------------------------\n");
 
+        int num1 = 50;
+        int num2 = 30;
+        int num3 = 10;
+        int num4 = num1++ + --num2 + ++num3;
+
+        System.out.println("num1 = " + num1);   //51
+        System.out.println("num2 = " + num2);   //29
+        System.out.println("num3 = " + num3);   //11
+        System.out.println("num4 = " + num4);   //91
+
+        System.out.println("\n-----------------------------------------------\n");
+
+        int aa = 15;
+        int bb = 10;
+        int cc = 30;
+
+        aa++;
+        --bb;
+        cc = --aa - bb++;
+
+        System.out.println("aa = " + aa);
+        System.out.println("bb = " + bb);
+        System.out.println("cc = " + cc);
+
+        System.out.println("\n-----------------------------------------------\n");
+
+
+        //4. 논리 부정 연산자
+        //- !는 논리 부정 연산자, 피연산자 앞에 붙임
+        //- 피연산자가 true이면 false 값을 산출, 피연산자가 false이면 true 값을 산출
+        boolean play = true;
+        System.out.println("play = " + play);
+
+        play = !play;
+        System.out.println("play = " + play);
+
+        play = !play;
+        System.out.println("play = " + play);
+
+        int num5 = 10;
+        int num6 = 10;
+
+        //내가 result라는 변수에다가 num5와 num6가 같냐는 물음의 결과를 저장하고 싶다면?
+        boolean result = num5 == num6;
+        System.out.println("result = " + !result);
+
+        System.out.println("\n-----------------------------------------------\n");
+
+
+        //5. 비트 반전 연산자(~)
+        //- 정수 타입의 피연산자에만 사용됨
+        //- 피연산자를 2진수로 표현했을 때 비트값인 0을 1로. 1은 0으로 반전함
+        //- 10을 2진수로 표현하면 1010  -> 비트 반전 -> 0101
+        //- 연산 후, 부호 비트인 최상위 비트를 포함해서 모든 비트가 반전되기 때문에 부호가 반대인 새로운 값이 산출됨
+        //- 피연산자는 연산을 수행하기 전에 int 타입으로 변환되고 비트 반전이 일어남
+        byte bV1 = 10;
+        //byte bV2 = ~bV1;    //~v1이 iht 타입으로 변환되어서 컴파일 에러
+
+        int v1 = 10;
+        int v2 = ~v1;
+        int v3 = ~v1 + 1;
+        System.out.println("32비트 이진 문자열: " + toBinaryString(v1) + " 십진수: " + v1);
+        System.out.println("32비트 이진 문자열: " + toBinaryString(v2) + " 십진수: " + v2);
+        System.out.println("32비트 이진 문자열: " + toBinaryString(v3) + " 십진수: " + v3);
+
+        System.out.println("\n-----------------------------------------------\n");
+
+        int v4 = -10;
+        int v5 = ~v4;
+        int v6 = ~v4 + 1;
+        System.out.println("32비트 이진 문자열: " + toBinaryString(v4) + " 십진수: " + v4);
+        System.out.println("32비트 이진 문자열: " + toBinaryString(v5) + " 십진수: " + v5);
+        System.out.println("32비트 이진 문자열: " + toBinaryString(v6) + " 십진수: " + v6);
+
+        //- 2의 보수 구하기
+        //- 10진수의 절대값을 2진수로 바꾼 다움 모두 뒤집고 1을 더해서 부호를 붙임
+
+
+    }
+
+    //정수값을 32비트의 이진 문자열로 리턴
+    public static String toBinaryString(int value) {
+        String str = Integer.toBinaryString(value);
+        while(str.length() < 32) {
+            str = "0" + str;
+        }
+
+        return str;
     }
 }
