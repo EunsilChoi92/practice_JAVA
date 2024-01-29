@@ -10,10 +10,41 @@ public class Operator4 {
 
         int score = 85;
         char grade = (score > 90) ? 'A' : ((score > 80) ? 'B' : 'C');
-        //(false) ? true일 떄 해당 : false일 때 해당
+        //(false) ? true일 때 해당 : false일 때 해당
         //(score > 80) ? 'B' : 'C' -> (true) ? -> 'B'
         //(false) ? 'A' : 'B'       -> grade는?? 'B'
         System.out.println("grade = " + grade);
+
+        //score가 90보다 크니? 크다면 'A' 작다면 ((score > 80) ? 'B' : 'C')
+        char grade2;
+        if(score > 90) {
+            grade2 = 'A';
+        } else {
+            //grade2 = ((score > 80) ? 'B' : 'C');
+            //score가 80보다 크니? 크다면  'B' 작다면  'C'
+            if(score > 80) {
+                grade2 = 'B';
+            } else {
+                grade2 = 'C';
+            }
+        }
+
+
+        //번외) 변수의 scope 공부
+        char grade1;
+        if(score > 90) {
+            grade1 = 'A';
+            char grade3 = 3;
+            grade3 = 4;
+        }
+        char grade3 = 3;
+        grade1 = 'B';
+        grade3 = 4;
+
+        System.out.println("grade1 = " + grade1);
+        System.out.println("grade3 = " + grade3);
+
+
 
 
 
