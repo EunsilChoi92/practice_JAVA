@@ -26,7 +26,9 @@ public class If {
 
         if(score < 90)
             System.out.println("점수가 90보다 작습니다.");
-            System.out.println("등급은 B입니다.");
+        System.out.println("등급은 B입니다.");
+
+        System.out.println("\n-----------------------------------------------\n");
 
 
         //3. if-else문
@@ -51,8 +53,10 @@ public class If {
         //- ||을 뒤집으면 &&
         //!(score1 > 90 || score1 == 90)
         //-> score1 <= 90 && score1 != 90
-        
-        
+
+        System.out.println("\n-----------------------------------------------\n");
+
+
         //4. else if문
         //- 조건이 여러 개인 if문을 작성할 때에는 else if를 사용
         //- else if문은 개수 제한이 없음
@@ -83,13 +87,39 @@ public class If {
         } else {
             System.out.println("3번");
         }
-        
+
         //- 조건문을 사용할 때에는 if는 무조건 있어야 하고 else if, else는 생략 가능
-        
+
+        System.out.println("\n-----------------------------------------------\n");
 
 
+        //5. 중첩 if문
+        //- if문의 블록 내부에 또 다른 if문을 사용하는 것
+        //- 중첩의 단계는 제한이 없기 때문에 실행 흐름을 잘 판단해서 작성하면 됨
 
+        int score3 = (int) (Math.random() * 20) + 81;   //Math.random()은 0 이상 1 미만의 난수를 반환
+                                                        //(0 <= x < 1) * 20
+                                                        //(0 <= x < 20) + 81
+                                                        //(81 <= x < 101)
+        System.out.println("점수: " + score3);
 
+        String grade;
+
+        if(score3 >= 90) {
+            if(score >= 95) {
+                grade = "A+";
+            } else {
+                grade = "A";
+            }
+        } else {    //score3 < 90
+            if(score3 >= 85) {  //85 <= score3 < 90
+                grade = "B+";
+            } else {    //score3 < 85 && score3 < 90
+                grade = "B";
+            }
+        }
+
+        System.out.println("학점: " + grade);
 
 
     }
